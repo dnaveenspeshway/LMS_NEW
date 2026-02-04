@@ -18,7 +18,8 @@ const convertIsoToDuration = (isoDuration) => {
     }
 
     const days = parseInt(matches[1] || '0', 10);
-    const hours = parseInt(matches[2] || '0', 10) + (days * 24);
+    const hours = parseInt(matches[2]
+         || '0', 10) + (days * 24);
     const minutes = parseInt(matches[3] || '0', 10);
     const seconds = Math.floor(parseFloat(matches[4] || '0'));
 

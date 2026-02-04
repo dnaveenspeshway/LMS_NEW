@@ -70,15 +70,24 @@ export default function CreateCourse() {
   async function onFormSubmit(e) {
     e.preventDefault();
 
-    if (
-      !userInput.title ||
-      !userInput.description ||
-      !userInput.category ||
-      !userInput.createdBy ||
-      !userInput.thumbnail ||
-      !userInput.price
-    ) {
-      toast.error("All field are required!");
+    if (!userInput.title) {
+      toast.error("Course title is required");
+      return;
+    }
+    if (!userInput.description) {
+      toast.error("Course description is required");
+      return;
+    }
+    if (!userInput.category) {
+      toast.error("Course category is required");
+      return;
+    }
+    if (!userInput.thumbnail) {
+      toast.error("Course thumbnail is required");
+      return;
+    }
+    if (!userInput.price) {
+      toast.error("Course price is required");
       return;
     }
 
@@ -87,7 +96,7 @@ export default function CreateCourse() {
     formData.append("title", userInput.title);
     formData.append("description", userInput.description);
     formData.append("category", userInput.category);
-    formData.append("createdBy", userInput.createdBy);
+    formData.append("createdBy", data?.fullName || "System Admin");
     formData.append("price", userInput.price);
     formData.append("thumbnail", userInput.thumbnail);
 
@@ -201,15 +210,6 @@ export default function CreateCourse() {
               />
             </div>
             <div className="md:w-[48%] w-full flex flex-col gap-5">
-              {/* instructor */}
-              <InputBox
-                label={"Instructor"}
-                name={"createdBy"}
-                type={"text"}
-                placeholder={"Enter Course instructor"}
-                onChange={handleUserInput}
-                value={userInput.createdBy}
-              />
               {/* category */}
               <InputBox
                 label={"Category"}

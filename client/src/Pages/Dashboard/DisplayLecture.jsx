@@ -530,7 +530,7 @@ export default function DisplayLecture() {
                     </h2>
                   </div>
 
-                  {lectures && !userProgress?.lecturesCompleted?.includes(lectures[currentVideo]?._id) && (
+                  {role !== "ADMIN" && lectures && !userProgress?.lecturesCompleted?.includes(lectures[currentVideo]?._id) && (
                     <button
                       onClick={handleVideoEnded}
                       className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
