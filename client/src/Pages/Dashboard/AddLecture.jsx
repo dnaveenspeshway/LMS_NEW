@@ -184,7 +184,7 @@ export default function AddLecture() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-indigo-900/30">
+      <div className="min-h-screen bg-gradient-to-br from-primary-light via-white to-secondary-light dark:from-slate-900 dark:via-primary-900/20 dark:to-secondary-900/30">
         {/* Header */}
         <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-5">
@@ -192,7 +192,7 @@ export default function AddLecture() {
               {/* Back Button - Left Side */}
               <motion.button
                 onClick={() => navigate(-1)}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-500 to-slate-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-2 px-4 py-2 bg-white text-secondary-DEFAULT border border-secondary-DEFAULT rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -202,7 +202,7 @@ export default function AddLecture() {
 
               {/* Centered Content */}
               <div className="flex-1 text-center">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
                   Add New Lecture
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 mt-1 text-sm font-medium">
@@ -232,7 +232,7 @@ export default function AddLecture() {
             >
               {/* Form Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-DEFAULT to-primary-dark rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
                   <FaVideo className="text-white text-2xl" />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -253,13 +253,13 @@ export default function AddLecture() {
                 >
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                      <FaCloudUploadAlt className="text-blue-500" />
+                      <FaCloudUploadAlt className="text-primary-DEFAULT" />
                       Video Upload
                     </h3>
 
                     {/* File Upload Area */}
                     <div className="relative">
-                      <div className="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-2xl p-6 text-center hover:border-blue-500 transition-colors duration-300 bg-slate-50/50 dark:bg-slate-700/30">
+                      <div className="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-2xl p-6 text-center hover:border-primary-DEFAULT transition-colors duration-300 bg-slate-50/50 dark:bg-slate-700/30">
                         {userInput.videoSrc ? (
                           <div className="space-y-4">
                             <video
@@ -270,7 +270,7 @@ export default function AddLecture() {
                               disablePictureInPicture
                               className="w-full rounded-xl shadow-lg"
                             />
-                            <p className="text-sm text-green-600 font-medium">Video uploaded successfully!</p>
+                            <p className="text-sm text-secondary-DEFAULT font-medium">Video uploaded successfully!</p>
                           </div>
                         ) : (
                           <div className="space-y-4">
@@ -286,7 +286,7 @@ export default function AddLecture() {
                             <button
                               type="button"
                               onClick={() => videoRef.current.click()}
-                              className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
                             >
                               Choose File
                             </button>
@@ -315,7 +315,7 @@ export default function AddLecture() {
                 >
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                      <FaVideo className="text-purple-500" />
+                      <FaVideo className="text-secondary-DEFAULT" />
                       Lecture Information
                     </h3>
 
@@ -331,7 +331,7 @@ export default function AddLecture() {
                           value={userInput.title}
                           onChange={handleInputChange}
                           placeholder="Enter an engaging title for your lecture"
-                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
                           required
                         />
                       </div>
@@ -347,7 +347,7 @@ export default function AddLecture() {
                           value={userInput.description}
                           onChange={handleInputChange}
                           placeholder="Describe what students will learn in this lecture..."
-                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200 resize-none"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200 resize-none"
                           required
                         />
                       </div>
@@ -384,7 +384,7 @@ export default function AddLecture() {
                       {/* Google Drive URL */}
                       <div>
                         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 flex items-center gap-2">
-                          <FaGoogleDrive className="text-blue-500" />
+                          <FaGoogleDrive className="text-primary-DEFAULT" />
                           Google Drive URL
                         </label>
                         <input
@@ -393,14 +393,14 @@ export default function AddLecture() {
                           value={userInput.driveUrl}
                           onChange={handleInputChange}
                           placeholder="https://drive.google.com/file/d/..."
-                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
                         />
                       </div>
 
                       {/* Duration */}
                       <div>
                         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 flex items-center gap-2">
-                          <FaClock className="text-green-500" />
+                          <FaClock className="text-secondary-DEFAULT" />
                           Duration
                         </label>
                         <input
@@ -409,7 +409,7 @@ export default function AddLecture() {
                           value={userInput.duration}
                           onChange={handleInputChange}
                           placeholder="e.g., 15m 30s or 1h 30m"
-                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-secondary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
                         />
                         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                           Auto-filled for uploaded videos, manual entry for URLs
@@ -430,7 +430,7 @@ export default function AddLecture() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:cursor-not-allowed disabled:shadow-none flex items-center justify-center gap-3 text-lg"
+                  className="w-full bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:cursor-not-allowed disabled:shadow-none flex items-center justify-center gap-3 text-lg"
                 >
                   {isLoading ? (
                     <>

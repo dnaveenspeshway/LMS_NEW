@@ -135,39 +135,37 @@ export default function Checkout() {
   }, [dispatch, navigate, userData, courseId, coursePrice]);
   return (
     <Layout>
-      <section className="flex flex-col gap-6 items-center py-8 px-3 min-h-[100vh]">
+      <section className="flex flex-col gap-6 items-center py-8 px-3 min-h-[100vh] justify-center bg-gray-50 dark:bg-gray-900">
         <form
           onSubmit={handleSubscription}
-          className="flex flex-col dark:bg-gray-800 bg-white gap-4 rounded-lg md:py-10 py-7 md:px-8 md:pt-3 px-3 md:w-[500px] w-full shadow-custom dark:shadow-xl transition duration-300"
+          className="flex flex-col dark:bg-gray-800 bg-white gap-4 rounded-2xl md:py-10 py-7 md:px-8 md:pt-3 px-3 md:w-[500px] w-full shadow-2xl transition duration-300 border border-gray-100 dark:border-gray-700"
         >
           <div>
-            <h1 className="bg-yellow-500 w-full text-center py-4 text-2xl font-bold rounded-tl-lg rounded-tr-lg text-white">
-              Subscription Bundle
+            <h1 className="bg-gradient-to-r from-primary-DEFAULT to-primary-dark w-full text-center py-6 text-2xl font-bold rounded-t-xl text-white shadow-lg">
+              Course Purchase
             </h1>
-            <div className="px-4 space-y-7 text-center text-gray-600 dark:text-gray-300">
+            <div className="px-4 space-y-7 text-center text-gray-600 dark:text-gray-300 p-6">
               <p className="text-lg mt-5">
-                Unlock access to all available courses on our platform for{" "}
-                <span className="text-yellow-500 font-bold">1 year</span>. This
-                includes both existing and new courses.
+                Get lifetime access to this course including all future updates and support.
               </p>
 
-              <p className="flex items-center justify-center gap-1 text-2xl font-bold text-yellow-500">
+              <div className="flex items-center justify-center gap-2 text-4xl font-bold text-primary-DEFAULT">
                 <BiRupee />
                 <span>{coursePrice}</span>
-              </p>
+              </div>
 
-              <div className="text-xs">
-                <p className="text-blue-600 dark:text-yellow-500">
-                  100% refund on cancellation
+              <div className="text-sm bg-green-50 dark:bg-green-900/20 p-4 rounded-xl border border-green-100 dark:border-green-900/30">
+                <p className="text-secondary-DEFAULT font-semibold">
+                  100% money-back guarantee
                 </p>
-                <p>* Terms and conditions apply *</p>
+                <p className="text-gray-500 dark:text-gray-400 mt-1">* 30-day refund policy applies *</p>
               </div>
 
               <button
                 type="submit"
-                className="bg-yellow-500  transition duration-300 w-full text-xl font-bold text-white py-2 rounded-bl-lg rounded-br-lg"
+                className="bg-primary-DEFAULT hover:bg-primary-dark transition-all duration-300 w-full text-xl font-bold text-white py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                Buy now
+                Complete Payment
               </button>
             </div>
           </div>

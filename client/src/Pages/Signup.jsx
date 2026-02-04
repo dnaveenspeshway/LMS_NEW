@@ -88,30 +88,30 @@ export default function Signup() {
 
   return (
     <Layout>
-      <section className="flex flex-col gap-6 items-center py-16 px-3 min-h-[100vh] relative overflow-hidden">
+      <section className="flex flex-col gap-6 items-center justify-center min-h-[calc(100vh-80px)] py-12 px-4 gradient-bg relative overflow-hidden">
         {/* Background elements */}
-        <div className="absolute top-20 right-10 w-32 h-32 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-10 w-40 h-40 bg-accent-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute top-20 right-10 w-64 h-64 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
 
         <motion.form
           onSubmit={createNewAccount}
           autoComplete="off"
           noValidate
-          className="flex flex-col dark:bg-base-100 gap-6 rounded-2xl md:py-10 py-8 md:px-10 px-6 md:w-[500px] w-full shadow-2xl backdrop-blur-lg bg-white/90 dark:bg-base-100/90 relative z-10"
+          className="flex flex-col gap-6 rounded-2xl p-8 md:p-12 md:w-[500px] w-full bg-white shadow-xl relative z-10 border border-gray-100"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="text-center"
+            className="text-center mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="gradient-text text-4xl font-bold mb-2">
-              Join Our Learning Community
+            <h1 className="text-3xl font-bold text-text-primary mb-2">
+              Join Our Community
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-text-secondary text-sm">
               Create your account and start your learning journey
             </p>
           </motion.div>
@@ -171,14 +171,14 @@ export default function Signup() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <label className="font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <BsCloudUpload className="text-primary-500" />
+            <label className="font-semibold text-text-primary flex items-center gap-2">
+              <BsCloudUpload className="text-primary-DEFAULT" />
               Profile Picture
-              <span className="text-sm text-gray-500 dark:text-gray-400 font-normal">
+              <span className="text-sm text-text-secondary font-normal">
                 (Optional)
               </span>
             </label>
-            <div className="flex items-center gap-4 p-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl hover:border-primary-400 transition-colors duration-200">
+            <div className="flex items-center gap-4 p-4 border-2 border-dashed border-gray-200 rounded-xl hover:border-primary-400 transition-colors duration-200 bg-gray-50">
               <div className="relative">
                 {previewImage ? (
                   <img
@@ -201,13 +201,10 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="image_uploads"
-                  className="cursor-pointer text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium transition-colors duration-200"
+                  className="cursor-pointer bg-white text-primary-DEFAULT border border-primary-200 px-4 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors text-sm shadow-sm"
                 >
-                  Choose an image
+                  Choose File
                 </label>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                  JPG, PNG up to 5MB
-                </p>
               </div>
             </div>
           </motion.div>
@@ -215,27 +212,20 @@ export default function Signup() {
           {/* submit btn */}
           <motion.button
             type="submit"
+            className="mt-2 btn btn-primary w-full py-3 text-lg"
             disabled={isLoading}
-            className="mt-4 btn-secondary hover:scale-105 transform transition-all duration-300 font-semibold text-lg py-3 disabled:opacity-50 disabled:cursor-not-allowed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
           >
-            {isLoading ? (
-              <div className="flex items-center justify-center gap-2">
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                Creating Account...
-              </div>
-            ) : (
-              "Create Account"
-            )}
+            {isLoading ? "Creating account..." : "Create Account"}
           </motion.button>
 
           {/* link */}
           <motion.p
-            className="text-center font-medium text-gray-600 dark:text-gray-400"
+            className="text-center text-text-secondary text-sm mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -243,9 +233,9 @@ export default function Signup() {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-secondary-600 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-300 font-semibold transition-colors duration-200"
+              className="text-primary-DEFAULT hover:text-primary-dark font-semibold transition-colors duration-200"
             >
-              Sign in here
+              Log in here
             </Link>
           </motion.p>
         </motion.form>

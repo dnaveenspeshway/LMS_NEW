@@ -17,22 +17,50 @@ export default {
       },
       colors: {
         primary: {
-          50: '#eff6ff',
-          500: '#3b82f6',
-          600: '#2563eb',
-          900: '#1e3a8a',
+          DEFAULT: '#0EA5E9', // Sky 500 for buttons/actions
+          light: '#E6F4FF',   // User specified primary
+          medium: '#BEE3F8',  // User specified primary
+          dark: '#0284C7',    // Sky 600
+          50: '#E6F4FF',
+          100: '#BEE3F8',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#0EA5E9',
+          600: '#0284C7',
+          700: '#0369A1',
+          900: '#0C4A6E',
         },
         secondary: {
-          50: '#f0fdf4',
-          500: '#22c55e',
-          600: '#16a34a',
-          900: '#14532d',
+          DEFAULT: '#10B981', // Emerald 500
+          light: '#D1FAE5',   // User specified secondary
+          medium: '#A7F3D0',  // User specified secondary
+          dark: '#059669',
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          200: '#A7F3D0',
+          300: '#6EE7B7',
+          400: '#34D399',
+          500: '#10B981',
+          600: '#059669',
+          700: '#047857',
+          900: '#064E3B',
         },
         accent: {
-          50: '#fffbeb',
-          500: '#f59e0b',
-          600: '#d97706',
-          900: '#78350f',
+          DEFAULT: '#2DD4BF', // User specified accent (Teal 400)
+          hover: '#14B8A6',   // Teal 500
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          900: '#134E4A',
+        },
+        text: {
+          primary: '#1F2937',   // Gray 800
+          secondary: '#6B7280', // Gray 500
         },
       },
       fontSize: {

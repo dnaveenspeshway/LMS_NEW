@@ -14,30 +14,29 @@ export default function Navbar({ toggleDrawer }) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 md:h-[85px] h-[75px] md:px-[45px] px-[25px] bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-b border-blue-200/30 dark:border-gray-700/30 shadow-lg flex justify-between items-center rounded-b-3xl">
+    <nav className="sticky top-0 z-50 md:h-[80px] h-[70px] md:px-[45px] px-[25px] bg-primary-light/90 backdrop-blur-md border-b border-white/50 shadow-sm flex justify-between items-center transition-all duration-300">
       {/* Left section: Sidebar toggle and Logo */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         {isLoggedIn && (
-          <button onClick={toggleDrawer} className="p-2.5 rounded-full bg-blue-100/80 hover:bg-blue-200/80 transition-all duration-300 cursor-pointer backdrop-blur-sm border border-blue-300/30">
-            <FiMenu size={"28px"} className="text-blue-700" />
+          <button onClick={toggleDrawer} className="p-2 rounded-lg hover:bg-white/50 text-primary-DEFAULT transition-all duration-300">
+            <FiMenu size={"26px"} />
           </button>
         )}
-        <div className="text-3xl font-black bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">LMS</div>
+        <Link to="/" className="text-2xl font-bold text-primary-DEFAULT tracking-tight hover:opacity-90 transition-opacity">
+          LMS
+        </Link>
       </div>
 
       {/* Middle section: Navigation links */}
-      <div className="flex items-center gap-6">
-        <Link to="/" className="px-4 py-2.5 text-gray-700 dark:text-gray-200 font-bold rounded-xl hover:bg-blue-50/80 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-blue-200/50 group">
-          <span className="relative z-10">Home</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="hidden md:flex items-center gap-8">
+        <Link to="/" className="text-text-secondary font-medium hover:text-primary-DEFAULT transition-colors duration-200">
+          Home
         </Link>
-        <Link to="/about" className="px-4 py-2.5 text-gray-700 dark:text-gray-200 font-bold rounded-xl hover:bg-blue-50/80 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-blue-200/50 group relative">
-          <span className="relative z-10">About Us</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <Link to="/about" className="text-text-secondary font-medium hover:text-primary-DEFAULT transition-colors duration-200">
+          About Us
         </Link>
-        <Link to="/contact" className="px-4 py-2.5 text-gray-700 dark:text-gray-200 font-bold rounded-xl hover:bg-blue-50/80 hover:text-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-md backdrop-blur-sm border border-transparent hover:border-blue-200/50 group relative">
-          <span className="relative z-10">Contact Us</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <Link to="/contact" className="text-text-secondary font-medium hover:text-primary-DEFAULT transition-colors duration-200">
+          Contact Us
         </Link>
       </div>
 
@@ -45,19 +44,19 @@ export default function Navbar({ toggleDrawer }) {
       <div className="flex items-center gap-4">
         {isLoggedIn ? (
           <>
-            <Link to="/user/profile" className="bg-blue-50/80 backdrop-blur-sm text-blue-700 px-5 py-2.5 font-bold rounded-xl hover:bg-blue-100/80 transition-all duration-300 transform hover:scale-105 border border-blue-200/50 shadow-sm hover:shadow-md">
+            <Link to="/user/profile" className="hidden md:block text-primary-DEFAULT font-medium hover:text-primary-dark transition-colors">
               Profile
             </Link>
-            <button onClick={onLogout} className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2.5 font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+            <button onClick={onLogout} className="btn btn-primary py-2 px-5 text-sm">
               Logout
             </button>
           </>
         ) : (
           <>
-            <Link to="/login" className="bg-blue-50/80 backdrop-blur-sm text-blue-700 px-5 py-2.5 font-bold rounded-xl hover:bg-blue-100/80 transition-all duration-300 transform hover:scale-105 border border-blue-200/50 shadow-sm hover:shadow-md">
+            <Link to="/login" className="text-text-primary font-medium hover:text-primary-DEFAULT transition-colors px-4 py-2">
               Login
             </Link>
-            <Link to="/signup" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-5 py-2.5 font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+            <Link to="/signup" className="btn btn-primary py-2 px-6 text-sm shadow-md hover:shadow-lg">
               Signup
             </Link>
           </>

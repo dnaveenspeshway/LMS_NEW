@@ -126,9 +126,9 @@ export default function CreateCourse() {
     <Layout>
       <section className="min-h-screen py-12 px-4 lg:px-8 relative overflow-hidden">
         {/* Background elements */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-DEFAULT rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-secondary-DEFAULT rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-accent-DEFAULT rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Header */}
@@ -139,7 +139,7 @@ export default function CreateCourse() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mb-6"
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-DEFAULT to-secondary-DEFAULT rounded-full mb-6"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
@@ -147,7 +147,7 @@ export default function CreateCourse() {
               <FaBookOpen className="text-white text-3xl" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
               Create New Course
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -240,7 +240,7 @@ export default function CreateCourse() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="flex items-center space-x-2 mb-4">
-              <FaBookOpen className="text-blue-500 text-xl" />
+              <FaBookOpen className="text-primary-DEFAULT text-xl" />
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 What You'll Learn
               </h2>
@@ -255,13 +255,13 @@ export default function CreateCourse() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <FaCheckCircle className="text-green-500 text-lg flex-shrink-0" />
+                  <FaCheckCircle className="text-secondary-DEFAULT text-lg flex-shrink-0" />
                   <input
                     type="text"
                     value={objective}
                     onChange={(e) => handleLearningObjectiveChange(index, e.target.value)}
                     placeholder={`Learning objective ${index + 1}`}
-                    className="flex-1 px-4 py-3 border border-gray-300 dark:border-base-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-base-100 text-gray-900 dark:text-white"
+                    className="flex-1 px-4 py-3 border border-gray-300 dark:border-base-300 rounded-lg focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-base-100 text-gray-900 dark:text-white"
                   />
                   {learningObjectives.length > 1 && (
                     <motion.button
@@ -281,7 +281,7 @@ export default function CreateCourse() {
             <motion.button
               type="button"
               onClick={addLearningObjective}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-primary-light dark:bg-primary-900/20 text-primary-dark dark:text-primary-400 rounded-lg hover:bg-primary-medium dark:hover:bg-primary-900/30 transition-colors"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -294,7 +294,7 @@ export default function CreateCourse() {
             <motion.button
               type="submit"
               disabled={isCreatingCourse}
-              className="mt-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 text-lg"
+              className="mt-6 bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 text-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

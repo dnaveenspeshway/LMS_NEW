@@ -25,10 +25,10 @@ export default function MyCourses() {
 
     return (
         <Layout>
-            <section className="min-h-screen py-12 px-4 lg:px-8 relative overflow-hidden">
+            <section className="min-h-screen py-12 px-4 lg:px-8 relative overflow-hidden bg-gray-50">
                 {/* Background elements */}
-                <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-                <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+                <div className="absolute top-10 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
+                <div className="absolute bottom-10 right-10 w-48 h-48 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
@@ -39,7 +39,7 @@ export default function MyCourses() {
                         transition={{ duration: 0.8 }}
                     >
                         <motion.div
-                            className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mb-6"
+                            className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-DEFAULT to-secondary-DEFAULT rounded-full mb-6 shadow-lg"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
@@ -47,23 +47,23 @@ export default function MyCourses() {
                             <FaGraduationCap className="text-white text-3xl" />
                         </motion.div>
 
-                        <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4 pb-2">
+                        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 pb-2">
                             My Learning Journey
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-xl text-text-secondary max-w-2xl mx-auto">
                             Continue your learning path with your enrolled courses
                         </p>
 
                         {/* Stats */}
-                        <div className="flex justify-center space-x-6 mt-8">
+                        <div className="flex justify-center space-x-10 mt-8">
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                <div className="text-3xl font-bold text-primary-DEFAULT">
                                     {courses?.length || 0}
                                 </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">Enrolled Courses</div>
+                                <div className="text-sm font-medium text-text-secondary mt-1">Enrolled Courses</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                                <div className="text-3xl font-bold text-secondary-DEFAULT">
                                     {courses?.length > 0
                                         ? Math.min(100, Math.round(
                                             courses.reduce((acc, course) => {
@@ -77,7 +77,7 @@ export default function MyCourses() {
                                         : 0
                                     }%
                                 </div>
-                                <div className="text-sm text-gray-600 dark:text-gray-400">Avg Progress</div>
+                                <div className="text-sm font-medium text-text-secondary mt-1">Avg Progress</div>
                             </div>
                         </div>
                     </motion.div>
@@ -105,7 +105,7 @@ export default function MyCourses() {
                                         whileHover={{ y: -4 }}
                                         className="group"
                                     >
-                                        <div className="bg-white dark:bg-base-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-base-300 h-full flex flex-col">
+                                        <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 h-full flex flex-col">
                                             {/* Image */}
                                             <div className="relative overflow-hidden h-48 flex-shrink-0">
                                                 <img
@@ -114,15 +114,15 @@ export default function MyCourses() {
                                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                                 />
                                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                    <div className="bg-white/90 dark:bg-base-100/90 backdrop-blur-sm p-3 rounded-full">
-                                                        <FaPlay className="text-primary-600 dark:text-primary-400 text-lg" />
+                                                    <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg">
+                                                        <FaPlay className="text-primary-DEFAULT text-lg pl-1" />
                                                     </div>
                                                 </div>
 
                                                 {/* Progress Badge */}
                                                 <div className="absolute top-3 right-3">
-                                                    <div className="bg-white/95 dark:bg-base-100/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-sm">
-                                                        <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                                                    <div className="bg-white/95 backdrop-blur-sm px-2 py-1 rounded-md shadow-sm border border-gray-100">
+                                                        <span className="text-xs font-bold text-primary-DEFAULT">
                                                             {percent}%
                                                         </span>
                                                     </div>
@@ -130,7 +130,7 @@ export default function MyCourses() {
 
                                                 {/* Category Badge */}
                                                 <div className="absolute top-3 left-3">
-                                                    <span className="px-2 py-1 bg-blue-500 text-white text-xs font-medium rounded-md shadow-sm">
+                                                    <span className="px-2 py-1 bg-primary-DEFAULT text-white text-xs font-medium rounded-md shadow-sm">
                                                         {course?.category}
                                                     </span>
                                                 </div>
@@ -138,25 +138,25 @@ export default function MyCourses() {
 
                                             {/* Content */}
                                             <div className="p-5 flex flex-col flex-grow">
-                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                                                <h3 className="text-lg font-bold text-text-primary line-clamp-2 mb-2 group-hover:text-primary-DEFAULT transition-colors duration-200">
                                                     {course?.title}
                                                 </h3>
 
-                                                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-grow">
+                                                <p className="text-text-secondary text-sm line-clamp-2 mb-4 flex-grow leading-relaxed">
                                                     {course?.description}
                                                 </p>
 
                                                 {/* Progress Bar */}
                                                 <div className="mb-4">
                                                     <div className="flex justify-between items-center mb-2">
-                                                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Progress</span>
-                                                        <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
+                                                        <span className="text-xs font-medium text-text-secondary">Progress</span>
+                                                        <span className="text-xs font-bold text-primary-DEFAULT">
                                                             {completedCount}/{totalLectures} lectures
                                                         </span>
                                                     </div>
-                                                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                                    <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
                                                         <motion.div
-                                                            className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full"
+                                                            className="bg-gradient-to-r from-primary-DEFAULT to-secondary-DEFAULT h-2 rounded-full"
                                                             initial={{ width: 0 }}
                                                             animate={{ width: `${percent}%` }}
                                                             transition={{ duration: 1, delay: index * 0.1 }}
@@ -165,9 +165,9 @@ export default function MyCourses() {
                                                 </div>
 
                                                 {/* Stats */}
-                                                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                                <div className="flex items-center justify-between text-sm text-text-secondary mb-4 pt-4 border-t border-gray-50">
                                                     <div className="flex items-center space-x-1">
-                                                        <FaBookOpen className="text-blue-500 text-xs" />
+                                                        <FaBookOpen className="text-primary-DEFAULT text-xs" />
                                                         <span>{totalLectures} lectures</span>
                                                     </div>
                                                 </div>
@@ -175,9 +175,9 @@ export default function MyCourses() {
                                                 {/* Action Button */}
                                                 <button
                                                     onClick={() => navigate("/course/displaylectures", { state: { ...course } })}
-                                                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm flex items-center justify-center space-x-2 mt-auto"
+                                                    className="w-full bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-2 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 mt-auto"
                                                 >
-                                                    <FaPlay className="text-sm" />
+                                                    <FaPlay className="text-xs" />
                                                     <span>Continue Learning</span>
                                                 </button>
                                             </div>
@@ -192,18 +192,18 @@ export default function MyCourses() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
                             >
-                                <div className="w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full flex items-center justify-center mb-8">
-                                    <FaBookOpen className="w-16 h-16 text-gray-400" />
+                                <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                                    <FaBookOpen className="w-10 h-10 text-gray-300" />
                                 </div>
-                                <h3 className="text-3xl font-bold text-gray-600 dark:text-gray-300 mb-4 text-center">
+                                <h3 className="text-2xl font-bold text-text-primary mb-3 text-center">
                                     No Courses Yet
                                 </h3>
-                                <p className="text-gray-500 dark:text-gray-400 text-center max-w-md mb-6">
+                                <p className="text-text-secondary text-center max-w-md mb-8">
                                     You haven't enrolled in any courses yet. Browse our course catalog to start your learning journey!
                                 </p>
                                 <button
                                     onClick={() => navigate("/courses")}
-                                    className="btn-primary"
+                                    className="btn btn-primary px-8"
                                 >
                                     Browse Courses
                                 </button>

@@ -64,16 +64,14 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <div className="bg-white dark:bg-gray-900 overflow-x-hidden font-sans">
+      <div className="bg-white overflow-x-hidden font-sans">
 
         {/* ================= HERO SECTION ================= */}
-        <section className="relative min-h-[92vh] flex items-center bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center gradient-bg overflow-hidden">
           {/* Animated Background Elements */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-          {/* Glassmorphism Overlay */}
-          <div className="absolute inset-0 bg-white/5 dark:bg-gray-900/5 backdrop-blur-sm"></div>
-
+          <div className="absolute top-20 left-10 w-96 h-96 bg-white/40 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-blob"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary-light/40 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+          
           <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
 
             {/* Text Content */}
@@ -83,51 +81,51 @@ export default function HomePage() {
               animate="visible"
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 border border-purple-200 dark:border-purple-800">
-                <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-                <span className="text-sm font-semibold text-purple-700 dark:text-purple-300">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-white shadow-sm backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-secondary-500 animate-pulse"></span>
+                <span className="text-sm font-semibold text-primary-dark">
                   {isLoggedIn ? `Welcome back, ${data?.fullName}!` : "#1 Learning Platform"}
                 </span>
               </div>
 
-              <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-[1.1] tracking-tight">
+              <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight">
                 {isLoggedIn ? "Continue" : "Start"} Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                <span className="text-primary-DEFAULT">
                   Success Story
                 </span>
               </motion.h1>
 
-              <motion.p variants={itemVariants} className="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
-                Unlock your potential with <span className="font-bold text-gray-900 dark:text-white">{totalCourses}+</span> expert-led courses.
+              <motion.p variants={itemVariants} className="text-lg text-text-secondary max-w-lg leading-relaxed">
+                Unlock your potential with <span className="font-bold text-text-primary">{totalCourses}+</span> expert-led courses.
                 Learn by doing, tracking your progress, and earning certificates that matter.
               </motion.p>
 
               <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
                 <Link to="/courses">
-                  <button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-purple-500/25 transition-all transform hover:-translate-y-1">
+                  <button className="btn btn-primary text-lg py-4 px-8 shadow-lg hover:shadow-primary-500/25 flex items-center gap-2">
                     Get Started Now <FiArrowRight />
                   </button>
                 </Link>
                 <button
                   onClick={() => setIsDemoOpen(true)}
-                  className="flex items-center gap-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-purple-200 hover:bg-purple-50 text-lg font-bold py-4 px-8 rounded-xl transition-all shadow-sm hover:shadow-md"
+                  className="btn btn-secondary text-lg py-4 px-8 shadow-sm hover:shadow-md flex items-center gap-2"
                 >
-                  <FiPlayCircle className="text-purple-600" /> Watch Demo
+                  <FiPlayCircle className="text-primary-DEFAULT" /> Watch Demo
                 </button>
               </motion.div>
 
               {/* Trust Indicators */}
-              <motion.div variants={itemVariants} className="pt-8 border-t border-gray-100 dark:border-gray-800 flex items-center gap-8">
+              <motion.div variants={itemVariants} className="pt-8 border-t border-gray-200/50 flex items-center gap-8">
                 <div className="flex -space-x-4">
                   {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900 bg-gray-200 overflow-hidden">
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 overflow-hidden">
                       <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="user" />
                     </div>
                   ))}
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 dark:text-white text-lg">{allUsersCount}+ Students</p>
-                  <div className="flex text-yellow-500 text-sm">
+                  <p className="font-bold text-text-primary text-lg">{allUsersCount}+ Students</p>
+                  <div className="flex text-yellow-400 text-sm">
                     {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
                   </div>
                 </div>
@@ -141,22 +139,22 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-200 to-transparent rounded-full opacity-20 filter blur-3xl transform translate-x-10 translate-y-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-light to-transparent rounded-full opacity-50 filter blur-3xl transform translate-x-10 translate-y-10"></div>
               <img src={heroPng} alt="Hero" className="w-full relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" />
 
               {/* Floating Badge */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-10 -left-6 bg-white dark:bg-gray-800/90 backdrop-blur-md p-4 rounded-2xl shadow-xl z-20 border border-gray-100 dark:border-gray-700 max-w-xs"
+                className="absolute bottom-10 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl z-20 border border-white max-w-xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg text-green-600 dark:text-green-400">
+                  <div className="bg-secondary-light p-2 rounded-lg text-secondary-dark">
                     <FiUserCheck size={24} />
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 dark:text-white">Expert Mentors</p>
-                    <p className="text-xs text-gray-500">Learn from the best.</p>
+                    <p className="font-bold text-text-primary">Expert Mentors</p>
+                    <p className="text-xs text-text-secondary">Learn from the best.</p>
                   </div>
                 </div>
               </motion.div>
@@ -167,9 +165,9 @@ export default function HomePage() {
 
 
         {/* ================= STATS SECTION ================= */}
-        <section className="py-20 bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 text-white relative overflow-hidden">
+        <section className="py-20 bg-primary-DEFAULT text-white relative overflow-hidden">
           {/* Glassmorphism Background */}
-          <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
           <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
             {[
               { value: `${totalCourses}+`, label: "Online Courses", icon: <FiBook /> },
@@ -183,11 +181,11 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="flex flex-col items-center space-y-2 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg"
+                className="flex flex-col items-center space-y-2 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg hover:bg-white/20 transition-all"
               >
-                <span className="text-purple-300 text-3xl mb-2">{stat.icon}</span>
+                <span className="text-secondary-light text-3xl mb-2">{stat.icon}</span>
                 <h3 className="text-4xl md:text-5xl font-bold">{stat.value}</h3>
-                <p className="text-purple-200 font-medium text-sm uppercase tracking-wider">{stat.label}</p>
+                <p className="text-primary-100 font-medium text-sm uppercase tracking-wider">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -196,7 +194,7 @@ export default function HomePage() {
 
         {/* ================= CATEGORIES SECTION ================= */}
         {dynamicCategories.length > 0 && (
-          <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+          <section className="py-20 bg-white relative overflow-hidden">
             {/* Glassmorphism Background */}
             <div className="absolute inset-0 bg-white/20 dark:bg-gray-900/20 backdrop-blur-sm"></div>
             <div className="container mx-auto px-6 relative z-10">

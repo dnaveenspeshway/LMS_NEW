@@ -39,7 +39,7 @@ export default function Contact() {
     }
 
     setIsLoading(true);
-    const loadingMessage = toast.loading("sending message...");
+    const loadingMessage = toast.loading("Sending message...");
     try {
       const res = await contactUs(userInput);
       toast.success(res?.data?.message, { id: loadingMessage });
@@ -49,7 +49,7 @@ export default function Contact() {
         message: "",
       });
     } catch (error) {
-      toast.error("message sending failed! try again", { id: loadingMessage });
+      toast.error("Message sending failed! Try again", { id: loadingMessage });
     } finally {
       setIsLoading(false);
     }
@@ -57,10 +57,10 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="flex flex-col gap-6 items-center py-16 px-3 min-h-[100vh] relative overflow-hidden">
+      <section className="flex flex-col gap-6 items-center py-16 px-4 min-h-screen relative overflow-hidden bg-gray-50">
         {/* Background elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-accent-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
 
         <motion.div
           className="text-center mb-8 relative z-10"
@@ -69,17 +69,17 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
+            className="w-16 h-16 bg-gradient-to-br from-primary-DEFAULT to-secondary-DEFAULT rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg rotate-3"
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 3 }}
             transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
           >
             <FiMessageSquare className="text-white text-3xl" />
           </motion.div>
-          <h1 className="gradient-text text-4xl font-bold mb-4">
-            Get In Touch
+          <h1 className="text-4xl font-bold mb-4 text-text-primary">
+            Get In <span className="text-primary-DEFAULT">Touch</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto leading-relaxed">
             Have questions about our courses? Need help with your learning journey?
             We'd love to hear from you!
           </p>
@@ -89,7 +89,7 @@ export default function Contact() {
           onSubmit={onFormSubmit}
           autoComplete="off"
           noValidate
-          className="flex flex-col dark:bg-base-100 gap-6 rounded-2xl md:py-10 py-8 md:px-10 px-6 md:w-[500px] w-full shadow-2xl backdrop-blur-lg bg-white/90 dark:bg-base-100/90 relative z-10"
+          className="flex flex-col gap-6 rounded-2xl md:py-10 py-8 md:px-10 px-6 md:w-[600px] w-full shadow-xl bg-white border border-gray-100 relative z-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -146,7 +146,7 @@ export default function Contact() {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className="mt-4 btn-accent hover:scale-105 transform transition-all duration-300 font-semibold text-lg py-3 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="mt-4 btn btn-primary w-full flex items-center justify-center gap-2 py-3 text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -169,39 +169,39 @@ export default function Contact() {
 
         {/* Contact info cards */}
         <motion.div
-          className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl relative z-10"
+          className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl w-full relative z-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.div
-            className="bg-white dark:bg-base-100 p-6 rounded-2xl shadow-xl backdrop-blur-lg"
+            className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center"
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mb-4">
-              <FiMail className="text-primary-600 text-xl" />
+            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4 text-primary-600">
+              <FiMail className="text-2xl" />
             </div>
-            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+            <h3 className="text-lg font-bold text-text-primary mb-2">
               Quick Response
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-text-secondary">
               We typically respond to all inquiries within 24 hours during business days.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-white dark:bg-base-100 p-6 rounded-2xl shadow-xl backdrop-blur-lg"
+            className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center"
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-full flex items-center justify-center mb-4">
-              <FiMessageSquare className="text-secondary-600 text-xl" />
+            <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mb-4 text-secondary-600">
+              <FiMessageSquare className="text-2xl" />
             </div>
-            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+            <h3 className="text-lg font-bold text-text-primary mb-2">
               Support Available
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-text-secondary">
               Our support team is here to help with course recommendations and technical assistance.
             </p>
           </motion.div>

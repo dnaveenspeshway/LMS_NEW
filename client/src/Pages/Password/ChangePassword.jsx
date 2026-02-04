@@ -2,9 +2,11 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Layout from "../../Layout/Layout";
 import { changePassword } from "../../Redux/Slices/AuthSlice";
 import InputBox from "../../Components/InputBox/InputBox";
+import { FaLock } from "react-icons/fa";
 
 export default function ChangePassword() {
   const dispatch = useDispatch();
@@ -33,7 +35,6 @@ export default function ChangePassword() {
 
     setIsLoading(true);
     
-    // dispatch create account action
     const response = await dispatch(changePassword(userPassword));
     if (response?.payload?.success) {
       setUserPassword({
@@ -47,57 +48,61 @@ export default function ChangePassword() {
 
   return (
     <Layout>
-      <section className="flex flex-col gap-6 items-center py-8 px-3 min-h-[100vh]">
-        <form
-          onSubmit={onChangePassword}
-          autoComplete="off"
-          noValidate
-          className="flex flex-col dark:bg-base-100 gap-4 rounded-lg md:py-5 py-7 md:px-7 px-3 md:w-[500px] w-full shadow-custom dark:shadow-xl  "
+      <section className="min-h-screen bg-gradient-to-br from-primary-light via-white to-secondary-light flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-md w-full space-y-8 bg-white p-10 rounded-2xl shadow-xl border border-gray-100"
         >
-          <h1 className="text-center dark:text-purple-500 text-4xl font-bold font-inter">
-            Change Password Page
-          </h1>
+          <div className="text-center">
+             <div className="mx-auto h-16 w-16 bg-primary-light rounded-full flex items-center justify-center mb-4">
+                <FaLock className="h-8 w-8 text-primary-DEFAULT" />
+             </div>
+             <h2 className="text-3xl font-extrabold text-text-primary">
+              Change Password
+            </h2>
+            <p className="mt-2 text-sm text-text-secondary">
+                Ensure your account is secure by updating your password.
+            </p>
+          </div>
           
-          {/* old password */}
-          <InputBox
-            label={"Old Password"}
-            name={"oldPassword"}
-            type={"password"}
-            placeholder={"Enter your old password..."}
-            onChange={handleUserInput}
-            value={userPassword.oldPassword}
-          />
-          {/* new password */}
-          <InputBox
-            label={"New Password"}
-            name={"newPassword"}
-            type={"password"}
-            placeholder={"Enter your new password..."}
-            onChange={handleUserInput}
-            value={userPassword.newPassword}
-          />
+          <form className="mt-8 space-y-6" onSubmit={onChangePassword} noValidate>
+            <InputBox
+              label="Old Password"
+              name="oldPassword"
+              type="password"
+              placeholder="Enter your old password..."
+              onChange={handleUserInput}
+              value={userPassword.oldPassword}
+            />
+            <InputBox
+              label="New Password"
+              name="newPassword"
+              type="password"
+              placeholder="Enter your new password..."
+              onChange={handleUserInput}
+              value={userPassword.newPassword}
+            />
 
-          {/* submit btn */}
-          <button
-            type="submit"
-            className="mt-2 bg-yellow-500 text-white dark:text-base-200  transition-all ease-in-out duration-300 rounded-md py-2 font-nunito-sans font-[500]  text-lg cursor-pointer"
-            disabled={isLoading}
-          >
-            {isLoading ? "changing..." : "Change"}
-          </button>
-
-          {/* link */}
-          <p className="text-center font-inter text-gray-500 dark:text-slate-300">
-            Not Remember ?{" "}
-            <Link
-              to="/reset"
-              className="link text-blue-600 font-lato cursor-pointer"
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {" "}
-              reset password
-            </Link>
-          </p>
-        </form>
+              {isLoading ? "Changing Password..." : "Change Password"}
+            </button>
+
+            <div className="text-center mt-4">
+                <Link
+                    to="/user/profile"
+                    className="font-medium text-primary-DEFAULT hover:text-primary-dark transition-colors text-sm"
+                >
+                    &larr; Back to Profile
+                </Link>
+            </div>
+          </form>
+        </motion.div>
       </section>
     </Layout>
   );

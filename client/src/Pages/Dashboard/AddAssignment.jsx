@@ -129,15 +129,15 @@ export default function AddAssignment() {
 
     return (
         <Layout>
-            <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-indigo-900/30">
+            <div className="min-h-screen bg-gradient-to-br from-primary-light via-white to-secondary-light dark:from-slate-900 dark:via-primary-900/20 dark:to-secondary-900/30">
                 {/* Header */}
-                <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg">
+                <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg sticky top-0 z-50">
                     <div className="max-w-7xl mx-auto px-6 py-5">
                         <div className="flex items-center justify-between">
                             {/* Back Button - Left Side */}
                             <motion.button
                                 onClick={() => navigate(-1)}
-                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-500 to-slate-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                                className="flex items-center gap-2 px-4 py-2 bg-white text-secondary-DEFAULT border border-secondary-DEFAULT rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -147,10 +147,10 @@ export default function AddAssignment() {
 
                             {/* Centered Content */}
                             <div className="flex-1 text-center">
-                                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                <h1 className="text-3xl font-bold text-text-primary">
                                     {isEditing ? "Edit Assignment Question" : "Add New Assignment"}
                                 </h1>
-                                <p className="text-slate-600 dark:text-slate-300 mt-1 text-sm font-medium">
+                                <p className="text-text-secondary mt-1 text-sm font-medium">
                                     📝 Create final assessment questions
                                 </p>
                             </div>
@@ -174,13 +174,13 @@ export default function AddAssignment() {
                             <form onSubmit={onFormSubmit} className="space-y-8">
                                 {/* Form Header */}
                                 <div className="text-center mb-8">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
-                                        <FaQuestionCircle className="text-white text-2xl" />
+                                    <div className="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
+                                        <FaQuestionCircle className="text-primary-DEFAULT text-2xl" />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                                    <h2 className="text-2xl font-bold text-text-primary mb-2">
                                         {isEditing ? "Edit Question" : "Create New Question"}
                                     </h2>
-                                    <p className="text-slate-600 dark:text-slate-400">
+                                    <p className="text-text-secondary">
                                         This question will be part of the Final Course Assignment
                                     </p>
                                 </div>
@@ -192,8 +192,8 @@ export default function AddAssignment() {
                                     transition={{ duration: 0.6, delay: 0.4 }}
                                 >
                                     <div>
-                                        <label className="block text-lg font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                                            <FaQuestionCircle className="text-purple-500" />
+                                        <label className="block text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+                                            <FaQuestionCircle className="text-primary-DEFAULT" />
                                             Question
                                         </label>
                                         <textarea
@@ -202,7 +202,7 @@ export default function AddAssignment() {
                                             value={userInput.question}
                                             onChange={handleInputChange}
                                             placeholder="Enter a clear, engaging question for the assignment..."
-                                            className="w-full px-6 py-4 border border-slate-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200 resize-none text-lg"
+                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 resize-none text-lg"
                                             required
                                         />
                                     </div>
@@ -216,13 +216,13 @@ export default function AddAssignment() {
                                     transition={{ duration: 0.6, delay: 0.5 }}
                                 >
                                     <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-                                            <FaListUl className="text-blue-500" />
+                                        <h3 className="text-lg font-semibold text-text-primary flex items-center gap-2">
+                                            <FaListUl className="text-secondary-DEFAULT" />
                                             Answer Options
                                         </h3>
                                         <div className="space-y-4">
                                             <div>
-                                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                                <label className="block text-sm font-medium text-text-secondary mb-2">
                                                     Option A
                                                 </label>
                                                 <input
@@ -231,12 +231,12 @@ export default function AddAssignment() {
                                                     value={userInput.option1}
                                                     onChange={handleInputChange}
                                                     placeholder="Enter first option"
-                                                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                     required
                                                 />
                                             </div>
                                             <div>
-                                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                                <label className="block text-sm font-medium text-text-secondary mb-2">
                                                     Option B
                                                 </label>
                                                 <input
@@ -245,7 +245,7 @@ export default function AddAssignment() {
                                                     value={userInput.option2}
                                                     onChange={handleInputChange}
                                                     placeholder="Enter second option"
-                                                    className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                     required
                                                 />
                                             </div>
@@ -256,7 +256,7 @@ export default function AddAssignment() {
                                         <div className="pt-8">
                                             <div className="space-y-4">
                                                 <div>
-                                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                                    <label className="block text-sm font-medium text-text-secondary mb-2">
                                                         Option C
                                                     </label>
                                                     <input
@@ -265,12 +265,12 @@ export default function AddAssignment() {
                                                         value={userInput.option3}
                                                         onChange={handleInputChange}
                                                         placeholder="Enter third option"
-                                                        className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                         required
                                                     />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                                    <label className="block text-sm font-medium text-text-secondary mb-2">
                                                         Option D
                                                     </label>
                                                     <input
@@ -279,7 +279,7 @@ export default function AddAssignment() {
                                                         value={userInput.option4}
                                                         onChange={handleInputChange}
                                                         placeholder="Enter fourth option"
-                                                        className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200"
+                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                         required
                                                     />
                                                 </div>
@@ -295,8 +295,8 @@ export default function AddAssignment() {
                                     transition={{ duration: 0.6, delay: 0.6 }}
                                 >
                                     <div>
-                                        <label className="block text-lg font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-                                            <FaCheck className="text-green-500" />
+                                        <label className="block text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+                                            <FaCheck className="text-secondary-DEFAULT" />
                                             Correct Answer
                                         </label>
                                         <input
@@ -305,10 +305,10 @@ export default function AddAssignment() {
                                             value={userInput.correctAnswer}
                                             onChange={handleInputChange}
                                             placeholder="Copy the exact text of the correct option above"
-                                            className="w-full px-6 py-4 border border-slate-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-slate-900 dark:text-white transition-all duration-200 text-lg"
+                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-secondary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 text-lg"
                                             required
                                         />
-                                        <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+                                        <p className="text-sm text-text-secondary mt-2">
                                             Must exactly match one of the options above
                                         </p>
                                     </div>
@@ -316,7 +316,7 @@ export default function AddAssignment() {
 
                                 {/* Submit Buttons */}
                                 <motion.div
-                                    className="pt-6 border-t border-slate-200 dark:border-slate-700"
+                                    className="pt-6 border-t border-gray-200 dark:border-slate-700"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.7 }}
@@ -324,7 +324,7 @@ export default function AddAssignment() {
                                     <div className="flex gap-4">
                                         <button
                                             type="submit"
-                                            className="flex-1 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
+                                            className="flex-1 bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
                                         >
                                             <FaPlus className="text-xl" />
                                             <span>{isEditing ? "Update Question" : "Add Question"}</span>
@@ -334,7 +334,7 @@ export default function AddAssignment() {
                                             <button
                                                 type="button"
                                                 onClick={cancelEdit}
-                                                className="bg-gradient-to-r from-slate-500 to-slate-600 hover:from-slate-600 hover:to-slate-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+                                                className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
                                             >
                                                 <span>Cancel</span>
                                             </button>
@@ -351,109 +351,54 @@ export default function AddAssignment() {
                             transition={{ duration: 0.6, delay: 0.8 }}
                         >
                             <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-600/30 shadow-2xl overflow-hidden">
-                                <div className="p-8 border-b border-slate-200/60 dark:border-slate-600/30">
-                                    <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent flex items-center gap-3">
-                                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                            <FaListUl className="text-white text-xl" />
-                                        </div>
-                                        Existing Questions ({quizzes?.length || 0})
-                                    </h2>
-                                    <p className="text-slate-600 dark:text-slate-400 mt-2">
-                                        Review and manage your assignment questions
-                                    </p>
+                                <div className="p-6 border-b border-gray-200 dark:border-slate-700">
+                                    <h3 className="text-xl font-bold text-text-primary">
+                                        Added Questions ({quizzes?.length || 0})
+                                    </h3>
                                 </div>
-
-                                <div className="p-8">
-                                    {quizzes && quizzes.length > 0 ? (
-                                        <div className="space-y-6">
-                                            {quizzes.map((quiz, index) => (
-                                                <motion.div
-                                                    key={quiz._id}
-                                                    className="bg-gradient-to-r from-slate-50 to-slate-100/50 dark:from-slate-700/50 dark:to-slate-600/30 rounded-2xl p-6 border border-slate-200/60 dark:border-slate-600/20 hover:shadow-lg transition-all duration-300"
-                                                    whileHover={{ scale: 1.02 }}
-                                                >
-                                                    <div className="flex items-start justify-between mb-4">
-                                                        <div className="flex items-center gap-3">
-                                                            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold">
-                                                                {index + 1}
-                                                            </div>
-                                                            <div>
-                                                                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                                                                    Question {index + 1}
-                                                                </h3>
-                                                                <p className="text-sm text-slate-600 dark:text-slate-400">
-                                                                    Assignment Question
-                                                                </p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="flex items-center gap-2">
-                                                            <motion.button
-                                                                onClick={() => handleEdit(quiz)}
-                                                                className="w-10 h-10 bg-blue-500 hover:bg-blue-600 text-white rounded-xl flex items-center justify-center transition-colors duration-200"
-                                                                whileHover={{ scale: 1.1 }}
-                                                                whileTap={{ scale: 0.9 }}
-                                                            >
-                                                                <FaEdit className="text-sm" />
-                                                            </motion.button>
-
-                                                            <motion.button
-                                                                onClick={() => handleDelete(quiz._id)}
-                                                                className="w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-xl flex items-center justify-center transition-colors duration-200"
-                                                                whileHover={{ scale: 1.1 }}
-                                                                whileTap={{ scale: 0.9 }}
-                                                            >
-                                                                <FaTrash className="text-sm" />
-                                                            </motion.button>
-                                                        </div>
+                                <div className="divide-y divide-gray-200 dark:divide-slate-700">
+                                    {quizzes?.map((quiz, idx) => (
+                                        <div key={quiz._id} className="p-6 hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors">
+                                            <div className="flex justify-between items-start gap-4">
+                                                <div className="flex-1">
+                                                    <div className="flex items-center gap-3 mb-2">
+                                                        <span className="w-8 h-8 rounded-full bg-primary-100 text-primary-DEFAULT flex items-center justify-center font-bold text-sm">
+                                                            {idx + 1}
+                                                        </span>
+                                                        <h4 className="font-semibold text-lg text-text-primary">{quiz.question}</h4>
                                                     </div>
-
-                                                    <div className="mb-4">
-                                                        <p className="text-slate-900 dark:text-white font-medium text-lg leading-relaxed">
-                                                            {quiz.question}
-                                                        </p>
-                                                    </div>
-
-                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                                        {quiz.options.map((option, optIndex) => (
-                                                            <div
-                                                                key={optIndex}
-                                                                className={`p-3 rounded-xl border transition-all duration-200 ${
-                                                                    option === quiz.correctAnswer
-                                                                        ? "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-700 text-green-800 dark:text-green-200"
-                                                                        : "bg-white dark:bg-slate-600 border-slate-200 dark:border-slate-500 text-slate-700 dark:text-slate-300"
-                                                                }`}
-                                                            >
-                                                                <div className="flex items-center gap-3">
-                                                                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold ${
-                                                                        option === quiz.correctAnswer
-                                                                            ? "bg-green-500 text-white"
-                                                                            : "bg-slate-300 dark:bg-slate-500 text-slate-600 dark:text-slate-300"
-                                                                    }`}>
-                                                                        {String.fromCharCode(65 + optIndex)}
-                                                                    </span>
-                                                                    <span className="flex-1 font-medium">{option}</span>
-                                                                    {option === quiz.correctAnswer && (
-                                                                        <FaCheck className="text-green-500" />
-                                                                    )}
-                                                                </div>
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pl-11">
+                                                        {quiz.options.map((option, i) => (
+                                                            <div key={i} className={`flex items-center gap-2 text-sm ${option === quiz.correctAnswer ? 'text-secondary-DEFAULT font-medium' : 'text-text-secondary'}`}>
+                                                                <div className={`w-2 h-2 rounded-full ${option === quiz.correctAnswer ? 'bg-secondary-DEFAULT' : 'bg-gray-300'}`}></div>
+                                                                {option}
                                                             </div>
                                                         ))}
                                                     </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div className="text-center py-12">
-                                            <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                                <FaQuestionCircle className="text-slate-400 text-2xl" />
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <button
+                                                        onClick={() => handleEdit(quiz)}
+                                                        className="p-2 text-primary-DEFAULT hover:bg-primary-light rounded-lg transition-colors"
+                                                        title="Edit"
+                                                    >
+                                                        <FaEdit />
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDelete(quiz._id)}
+                                                        className="p-2 text-red-500 hover:bg-red-100 rounded-lg transition-colors"
+                                                        title="Delete"
+                                                    >
+                                                        <FaTrash />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                                                No Questions Yet
-                                            </h3>
-                                            <p className="text-slate-600 dark:text-slate-400">
-                                                Start building your assignment by adding the first question above
-                                            </p>
+                                        </div>
+                                    ))}
+                                    {quizzes?.length === 0 && (
+                                        <div className="p-12 text-center text-text-secondary">
+                                            <FaQuestionCircle className="mx-auto text-4xl mb-3 opacity-20" />
+                                            <p>No questions added yet</p>
                                         </div>
                                     )}
                                 </div>
