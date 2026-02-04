@@ -137,7 +137,7 @@ export default function AddAssignment() {
                             {/* Back Button - Left Side */}
                             <motion.button
                                 onClick={() => navigate(-1)}
-                                className="flex items-center gap-2 px-4 py-2 bg-white text-secondary-DEFAULT border border-secondary-DEFAULT rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                                className="flex items-center gap-2 px-4 py-2 bg-white text-secondary border border-secondary rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -175,7 +175,7 @@ export default function AddAssignment() {
                                 {/* Form Header */}
                                 <div className="text-center mb-8">
                                     <div className="w-16 h-16 bg-primary-light rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
-                                        <FaQuestionCircle className="text-primary-DEFAULT text-2xl" />
+                                        <FaQuestionCircle className="text-primary text-2xl" />
                                     </div>
                                     <h2 className="text-2xl font-bold text-text-primary mb-2">
                                         {isEditing ? "Edit Question" : "Create New Question"}
@@ -193,7 +193,7 @@ export default function AddAssignment() {
                                 >
                                     <div>
                                         <label className="block text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
-                                            <FaQuestionCircle className="text-primary-DEFAULT" />
+                                            <FaQuestionCircle className="text-primary" />
                                             Question
                                         </label>
                                         <textarea
@@ -202,7 +202,7 @@ export default function AddAssignment() {
                                             value={userInput.question}
                                             onChange={handleInputChange}
                                             placeholder="Enter a clear, engaging question for the assignment..."
-                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 resize-none text-lg"
+                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 resize-none text-lg"
                                             required
                                         />
                                     </div>
@@ -217,7 +217,7 @@ export default function AddAssignment() {
                                 >
                                     <div className="space-y-4">
                                         <h3 className="text-lg font-semibold text-text-primary flex items-center gap-2">
-                                            <FaListUl className="text-secondary-DEFAULT" />
+                                            <FaListUl className="text-secondary" />
                                             Answer Options
                                         </h3>
                                         <div className="space-y-4">
@@ -231,7 +231,7 @@ export default function AddAssignment() {
                                                     value={userInput.option1}
                                                     onChange={handleInputChange}
                                                     placeholder="Enter first option"
-                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
+                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                     required
                                                 />
                                             </div>
@@ -245,7 +245,7 @@ export default function AddAssignment() {
                                                     value={userInput.option2}
                                                     onChange={handleInputChange}
                                                     placeholder="Enter second option"
-                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
+                                                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                     required
                                                 />
                                             </div>
@@ -265,7 +265,7 @@ export default function AddAssignment() {
                                                         value={userInput.option3}
                                                         onChange={handleInputChange}
                                                         placeholder="Enter third option"
-                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
+                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                         required
                                                     />
                                                 </div>
@@ -279,7 +279,7 @@ export default function AddAssignment() {
                                                         value={userInput.option4}
                                                         onChange={handleInputChange}
                                                         placeholder="Enter fourth option"
-                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
+                                                        className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200"
                                                         required
                                                     />
                                                 </div>
@@ -296,7 +296,7 @@ export default function AddAssignment() {
                                 >
                                     <div>
                                         <label className="block text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
-                                            <FaCheck className="text-secondary-DEFAULT" />
+                                            <FaCheck className="text-secondary" />
                                             Correct Answer
                                         </label>
                                         <input
@@ -305,7 +305,7 @@ export default function AddAssignment() {
                                             value={userInput.correctAnswer}
                                             onChange={handleInputChange}
                                             placeholder="Copy the exact text of the correct option above"
-                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-secondary-DEFAULT focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 text-lg"
+                                            className="w-full px-6 py-4 border border-gray-300 dark:border-slate-600 rounded-2xl focus:ring-2 focus:ring-secondary focus:border-transparent bg-white dark:bg-slate-700 text-text-primary transition-all duration-200 text-lg"
                                             required
                                         />
                                         <p className="text-sm text-text-secondary mt-2">
@@ -324,7 +324,7 @@ export default function AddAssignment() {
                                     <div className="flex gap-4">
                                         <button
                                             type="submit"
-                                            className="flex-1 bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
+                                            className="flex-1 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-lg"
                                         >
                                             <FaPlus className="text-xl" />
                                             <span>{isEditing ? "Update Question" : "Add Question"}</span>

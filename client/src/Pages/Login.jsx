@@ -140,7 +140,7 @@ export default function Login() {
             Don't have an account?{" "}
             <Link
               to="/signup"
-              className="text-primary-DEFAULT hover:text-primary-dark font-semibold transition-colors duration-200"
+              className="text-primary hover:text-primary-dark font-semibold transition-colors duration-200"
             >
               Sign up here
             </Link>

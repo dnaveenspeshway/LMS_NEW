@@ -11,29 +11,29 @@ export default function Footer() {
       </span>
       <div className="flex gap-6 items-center">
         <a
-          href="#"
-          className="text-2xl text-text-secondary hover:text-primary-DEFAULT transition-colors duration-300"
-        >
-          <BsFacebook />
-        </a>
-        <a
-          href="#"
-          className="text-2xl text-text-secondary hover:text-primary-DEFAULT transition-colors duration-300"
-        >
-          <BsInstagram />
-        </a>
-        <a
-          href="#"
-          className="text-2xl text-text-secondary hover:text-primary-DEFAULT transition-colors duration-300"
-        >
-          <BsLinkedin />
-        </a>
-        <a
-          href="#"
-          className="text-2xl text-text-secondary hover:text-primary-DEFAULT transition-colors duration-300"
-        >
-          <BsTwitter />
-        </a>
+            href="#"
+            className="text-2xl text-text-secondary hover:text-primary transition-colors duration-300"
+          >
+            <BsFacebook />
+          </a>
+          <a
+            href="#"
+            className="text-2xl text-text-secondary hover:text-primary transition-colors duration-300"
+          >
+            <BsInstagram />
+          </a>
+          <a
+            href="#"
+            className="text-2xl text-text-secondary hover:text-primary transition-colors duration-300"
+          >
+            <BsLinkedin />
+          </a>
+          <a
+            href="#"
+            className="text-2xl text-text-secondary hover:text-primary transition-colors duration-300"
+          >
+            <BsTwitter />
+          </a>
       </div>
     </footer>
   );

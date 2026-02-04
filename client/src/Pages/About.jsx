@@ -124,7 +124,7 @@ function AboutUs() {
               >
                 <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-text-primary mb-6 pb-2">
                   Empowering Your <br />
-                  <span className="text-primary-DEFAULT">Learning Journey</span>
+                  <span className="text-primary">Learning Journey</span>
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-text-secondary">
                   Welcome to LMS PRO, where education meets innovation. We are dedicated to providing a transformative learning experience that equips you with the skills to succeed in the modern world.
@@ -152,7 +152,7 @@ function AboutUs() {
                 className="lg:w-1/2 flex justify-center"
               >
                 <div className="relative">
-                  <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary-DEFAULT to-secondary-DEFAULT opacity-30 blur-2xl"></div>
+                  <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-30 blur-2xl"></div>
                   <img
                     src={aboutMainImage}
                     alt="Team working"
@@ -178,7 +178,7 @@ function AboutUs() {
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       className="mx-auto flex max-w-xs min-w-[180px] flex-col gap-y-4 p-6 hover:bg-gray-50 rounded-xl transition-colors"
                     >
-                      <div className="text-4xl text-primary-DEFAULT mx-auto flex items-center justify-center bg-primary-50 w-16 h-16 rounded-full shadow-sm">
+                      <div className="text-4xl text-primary mx-auto flex items-center justify-center bg-primary-50 w-16 h-16 rounded-full shadow-sm">
                         {stat.icon}
                       </div>
                       <dt className="text-base leading-7 text-text-secondary font-medium">{stat.label}</dt>
@@ -214,7 +214,7 @@ function AboutUs() {
                   whileHover={{ y: -5 }}
                   className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="mb-6 inline-block p-4 rounded-xl bg-primary-50 text-primary-DEFAULT">
+                  <div className="mb-6 inline-block p-4 rounded-xl bg-primary-50 text-primary">
                     {React.cloneElement(value.icon, { className: "text-4xl" })}
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-3">{value.title}</h3>

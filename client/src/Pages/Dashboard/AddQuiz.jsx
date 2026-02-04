@@ -165,7 +165,7 @@ export default function AddQuiz() {
                         <header className="flex items-center justify-between mb-8 relative z-10">
                             <motion.button 
                                 type="button"
-                                className="flex items-center gap-2 text-text-secondary hover:text-primary-DEFAULT transition-colors" 
+                                className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors" 
                                 onClick={() => navigate(-1)}
                                 whileHover={{ x: -5 }}
                             >
@@ -185,13 +185,13 @@ export default function AddQuiz() {
                                 value={userInput.question}
                                 onChange={handleInputChange}
                                 placeholder="Enter the question"
-                                className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary-DEFAULT"
+                                className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary"
                             />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <InputBox label="Option 1" name="option1" value={userInput.option1} onChange={handleInputChange} className="bg-gray-50" />
-                                <InputBox label="Option 2" name="option2" value={userInput.option2} onChange={handleInputChange} className="bg-gray-50" />
-                                <InputBox label="Option 3" name="option3" value={userInput.option3} onChange={handleInputChange} className="bg-gray-50" />
-                                <InputBox label="Option 4" name="option4" value={userInput.option4} onChange={handleInputChange} className="bg-gray-50" />
+                                <InputBox label="Option 1" name="option1" value={userInput.option1} onChange={handleInputChange} className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary" />
+                                <InputBox label="Option 2" name="option2" value={userInput.option2} onChange={handleInputChange} className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary" />
+                                <InputBox label="Option 3" name="option3" value={userInput.option3} onChange={handleInputChange} className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary" />
+                                <InputBox label="Option 4" name="option4" value={userInput.option4} onChange={handleInputChange} className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary" />
                             </div>
                             <InputBox
                                 label="Correct Answer"
@@ -199,13 +199,13 @@ export default function AddQuiz() {
                                 value={userInput.correctAnswer}
                                 onChange={handleInputChange}
                                 placeholder="Copy exact text of correct option"
-                                className="bg-gray-50 border-secondary-DEFAULT/50 focus:border-secondary-DEFAULT"
+                                className="bg-gray-50 dark:bg-slate-700 border-gray-200 dark:border-slate-600 focus:border-primary"
                             />
                             
                             <div className="flex gap-4 mt-4">
                                 <button 
                                     type="submit" 
-                                    className="flex-1 bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                                    className="flex-1 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary-900 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                                 >
                                     {isEditing ? "Update Quiz" : "Add Quiz"}
                                 </button>
@@ -231,7 +231,7 @@ export default function AddQuiz() {
                         transition={{ delay: 0.2 }}
                         className="w-full max-w-3xl mt-8 flex flex-col gap-4"
                     >
-                        <h2 className="text-2xl font-bold text-text-primary pl-2 border-l-4 border-secondary-DEFAULT">
+                        <h2 className="text-2xl font-bold text-text-primary pl-2 border-l-4 border-secondary">
                             Existing Quizzes
                         </h2>
                         {existingQuizzes.length > 0 ? (
@@ -251,15 +251,15 @@ export default function AddQuiz() {
                                             </button>
                                         </div>
                                         <div className="flex gap-3">
-                                            <span className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary-DEFAULT rounded-full flex items-center justify-center font-bold text-sm">
+                                            <span className="flex-shrink-0 w-8 h-8 bg-primary-100 text-primary rounded-full flex items-center justify-center font-bold text-sm">
                                                 Q{index + 1}
                                             </span>
                                             <div>
                                                 <p className="font-semibold text-lg text-text-primary mb-3">{quiz.question}</p>
                                                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
                                                     {quiz.options.map((opt, i) => (
-                                                        <li key={i} className={`flex items-center gap-2 text-sm ${opt === quiz.correctAnswer ? "text-secondary-DEFAULT font-medium" : "text-text-secondary"}`}>
-                                                            <span className={`w-2 h-2 rounded-full ${opt === quiz.correctAnswer ? "bg-secondary-DEFAULT" : "bg-gray-300"}`}></span>
+                                                        <li key={i} className={`flex items-center gap-2 text-sm ${opt === quiz.correctAnswer ? "text-secondary font-medium" : "text-text-secondary"}`}>
+                                                            <span className={`w-2 h-2 rounded-full ${opt === quiz.correctAnswer ? "bg-secondary" : "bg-gray-300"}`}></span>
                                                             {opt}
                                                         </li>
                                                     ))}
@@ -280,3 +280,4 @@ export default function AddQuiz() {
         </Layout>
     );
 }
+er3sze1 wae 1aswa1rtf

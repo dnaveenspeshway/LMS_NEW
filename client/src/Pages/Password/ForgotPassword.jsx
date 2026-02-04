@@ -41,7 +41,7 @@ export default function ForgotPassword() {
         >
           <div className="text-center">
              <div className="mx-auto h-16 w-16 bg-primary-light rounded-full flex items-center justify-center mb-4">
-                <FaEnvelope className="h-8 w-8 text-primary-DEFAULT" />
+                <FaEnvelope className="h-8 w-8 text-primary" />
              </div>
              <h2 className="text-3xl font-extrabold text-text-primary">
               Forgot Password?
@@ -72,7 +72,7 @@ export default function ForgotPassword() {
             <div className="text-center mt-4">
                 <Link
                     to="/login"
-                    className="font-medium text-primary-DEFAULT hover:text-primary-dark transition-colors text-sm"
+                    className="font-medium text-primary hover:text-primary-dark transition-colors text-sm"
                 >
                     &larr; Back to Login
                 </Link>

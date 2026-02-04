@@ -95,7 +95,7 @@ export default function CourseList() {
               transition={{ duration: 0.8 }}
             >
               <motion.div
-                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-DEFAULT to-secondary-DEFAULT rounded-full mb-6 shadow-lg"
+                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full mb-6 shadow-lg"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
@@ -105,7 +105,7 @@ export default function CourseList() {
 
               <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-4 pb-2">
                 Discover Your Next
-                <span className="block text-primary-DEFAULT mt-2">
+                <span className="block text-primary mt-2">
                   Learning Adventure
                 </span>
               </h1>
@@ -123,7 +123,7 @@ export default function CourseList() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <div className="text-3xl font-bold text-primary-DEFAULT">
+                  <div className="text-3xl font-bold text-primary">
                     {coursesData?.length || 0}
                   </div>
                   <div className="text-sm text-text-secondary">Courses</div>
@@ -135,7 +135,7 @@ export default function CourseList() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <div className="text-3xl font-bold text-secondary-DEFAULT">
+                  <div className="text-3xl font-bold text-secondary">
                     {categories.length - 1}
                   </div>
                   <div className="text-sm text-text-secondary">Categories</div>
@@ -147,7 +147,7 @@ export default function CourseList() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <div className="text-3xl font-bold text-accent-DEFAULT">
+                  <div className="text-3xl font-bold text-accent">
                     {averageRating}★
                   </div>
                   <div className="text-sm text-text-secondary">Avg Rating</div>

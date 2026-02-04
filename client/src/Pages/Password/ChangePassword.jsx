@@ -57,7 +57,7 @@ export default function ChangePassword() {
         >
           <div className="text-center">
              <div className="mx-auto h-16 w-16 bg-primary-light rounded-full flex items-center justify-center mb-4">
-                <FaLock className="h-8 w-8 text-primary-DEFAULT" />
+                <FaLock className="h-8 w-8 text-primary" />
              </div>
              <h2 className="text-3xl font-extrabold text-text-primary">
               Change Password
@@ -88,7 +88,7 @@ export default function ChangePassword() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-primary-DEFAULT to-primary-dark hover:from-primary-dark hover:to-primary-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-DEFAULT transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-xl text-white bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isLoading ? "Changing Password..." : "Change Password"}
             </button>
@@ -96,7 +96,7 @@ export default function ChangePassword() {
             <div className="text-center mt-4">
                 <Link
                     to="/user/profile"
-                    className="font-medium text-primary-DEFAULT hover:text-primary-dark transition-colors text-sm"
+                    className="font-medium text-primary hover:text-primary-dark transition-colors text-sm"
                 >
                     &larr; Back to Profile
                 </Link>

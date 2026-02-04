@@ -18,13 +18,13 @@ const SidebarItem = ({ to, icon, label, onClick, closeDrawer, location }) => {
           onClick?.(event);
         }}
         className={`
-          flex items-center gap-4 px-4 py-3 rounded-lg
-          transition-all duration-200 ease-in-out font-medium
-          ${isActive
-            ? "bg-secondary-light text-secondary-900 shadow-sm"
-            : "text-text-secondary hover:bg-gray-50 hover:text-primary-DEFAULT"
-          }
-        `}
+                      flex items-center gap-4 px-4 py-3 rounded-lg
+                      transition-all duration-200 ease-in-out font-medium
+                      ${isActive
+                        ? "bg-secondary-light text-secondary-900 shadow-sm"
+                        : "text-text-secondary hover:bg-gray-50 hover:text-primary"
+                      }
+                    `}
       >
         <span className={`text-xl ${isActive ? "text-secondary-600" : ""}`}>
           {icon}

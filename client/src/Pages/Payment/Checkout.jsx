@@ -141,7 +141,7 @@ export default function Checkout() {
           className="flex flex-col dark:bg-gray-800 bg-white gap-4 rounded-2xl md:py-10 py-7 md:px-8 md:pt-3 px-3 md:w-[500px] w-full shadow-2xl transition duration-300 border border-gray-100 dark:border-gray-700"
         >
           <div>
-            <h1 className="bg-gradient-to-r from-primary-DEFAULT to-primary-dark w-full text-center py-6 text-2xl font-bold rounded-t-xl text-white shadow-lg">
+            <h1 className="bg-gradient-to-r from-primary to-primary-dark w-full text-center py-6 text-2xl font-bold rounded-t-xl text-white shadow-lg">
               Course Purchase
             </h1>
             <div className="px-4 space-y-7 text-center text-gray-600 dark:text-gray-300 p-6">
@@ -149,13 +149,13 @@ export default function Checkout() {
                 Get lifetime access to this course including all future updates and support.
               </p>
 
-              <div className="flex items-center justify-center gap-2 text-4xl font-bold text-primary-DEFAULT">
+              <div className="flex items-center justify-center gap-2 text-4xl font-bold text-primary">
                 <BiRupee />
                 <span>{coursePrice}</span>
               </div>
 
               <div className="text-sm bg-green-50 dark:bg-green-900/20 p-4 rounded-xl border border-green-100 dark:border-green-900/30">
-                <p className="text-secondary-DEFAULT font-semibold">
+                <p className="text-secondary font-semibold">
                   100% money-back guarantee
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 mt-1">* 30-day refund policy applies *</p>
@@ -163,7 +163,7 @@ export default function Checkout() {
 
               <button
                 type="submit"
-                className="bg-primary-DEFAULT hover:bg-primary-dark transition-all duration-300 w-full text-xl font-bold text-white py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="bg-primary hover:bg-primary-dark transition-all duration-300 w-full text-xl font-bold text-white py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Complete Payment
               </button>

@@ -90,7 +90,7 @@ export default function HomePage() {
 
               <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight">
                 {isLoggedIn ? "Continue" : "Start"} Your <br />
-                <span className="text-primary-DEFAULT">
+                <span className="text-primary">
                   Success Story
                 </span>
               </motion.h1>
@@ -110,7 +110,7 @@ export default function HomePage() {
                   onClick={() => setIsDemoOpen(true)}
                   className="btn btn-secondary text-lg py-4 px-8 shadow-sm hover:shadow-md flex items-center gap-2"
                 >
-                  <FiPlayCircle className="text-primary-DEFAULT" /> Watch Demo
+                  <FiPlayCircle className="text-primary" /> Watch Demo
                 </button>
               </motion.div>
 
@@ -165,7 +165,7 @@ export default function HomePage() {
 
 
         {/* ================= STATS SECTION ================= */}
-        <section className="py-20 bg-primary-DEFAULT text-white relative overflow-hidden">
+        <section className="py-20 bg-primary text-white relative overflow-hidden">
           {/* Glassmorphism Background */}
           <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
           <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">

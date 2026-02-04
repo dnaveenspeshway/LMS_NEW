@@ -172,7 +172,7 @@ export default function Signup() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <label className="font-semibold text-text-primary flex items-center gap-2">
-              <BsCloudUpload className="text-primary-DEFAULT" />
+              <BsCloudUpload className="text-primary" />
               Profile Picture
               <span className="text-sm text-text-secondary font-normal">
                 (Optional)
@@ -201,7 +201,7 @@ export default function Signup() {
                 />
                 <label
                   htmlFor="image_uploads"
-                  className="cursor-pointer bg-white text-primary-DEFAULT border border-primary-200 px-4 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors text-sm shadow-sm"
+                  className="cursor-pointer bg-white text-primary border border-primary-200 px-4 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors text-sm shadow-sm"
                 >
                   Choose File
                 </label>
@@ -233,7 +233,7 @@ export default function Signup() {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="text-primary-DEFAULT hover:text-primary-dark font-semibold transition-colors duration-200"
+              className="text-primary hover:text-primary-dark font-semibold transition-colors duration-200"
             >
               Log in here
             </Link>
